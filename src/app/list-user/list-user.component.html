@@ -1,0 +1,31 @@
+
+<div class="container">
+  <h2>Bordered Table</h2>
+  <button (click)= "addUser()" class="btn btn-primary">Add User</button>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.firstName}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.email}}</td>
+        <td><button class="btn btn-primary" (click) = "editUser(user.id)" >Edit</button></td>
+        <td><button class="btn btn-primary" (click) = "deleteUser(user.id)">Delete</button></td>
+
+      </tr>
+      
+    </tbody>
+  </table>
+
+  <input type="text" value="{{text}}" (input) = "update($event)">
+  {{text}}
+</div>
